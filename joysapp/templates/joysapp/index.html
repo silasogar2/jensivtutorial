@@ -1,0 +1,69 @@
+    {% extends 'joysapp/base.html' %}
+    {% block content %}
+        <!-- Sticky Navbar -->
+        <div class="page-header">
+            <div class="container">
+                <h1 class="title">{% if pagetitle %} {{ pagetitle }}{% endif %}</h1>
+            </div>
+            <div class="breadcrumb-box">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="active">Blog Grid 3 Column</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- page-header -->
+        <section class="page-section">
+            <div class="container">
+
+                <div class="row">
+                    {%  for post in posts %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="post-item">
+                            <div class="post-image">
+                                <img src="img/sections/blog/big-1.jpg" width="600" height="400" alt="" title="" />
+                            </div>
+                            <h2 class="post-title">
+                                <a href="blog-single.html">{{ post.title }}</a>
+                            </h2>
+                            <div class="post-content">{{ post.content }}</div>
+                            <div class="post-meta">
+                            <!-- Author  -->
+                            <span class="author">
+                            <i class="fa fa-user"></i>{{ post.authour }}</span> 
+                            <!-- Meta Date -->
+                             
+                            <span class="time">
+                            <i class="fa fa-calendar"></i> {{ post.date_posted  }}</span> 
+                            <!-- Category -->
+                             
+                            <span class="category pull-right">
+                            <i class="fa fa-heart"></i>{{ post.category }}</span></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+               
+                <!-- pagination -->
+            </div>
+        </section>
+        <!-- page-section -->
+        <div id="get-quote" class="bg-color get-a-quote black text-center" data-appear-animation="fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">Get A Free Quote / Need a Help ? 
+                    <a class="black" href="#">Contact Us</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- request -->
+    {% endblock content %}
+        
